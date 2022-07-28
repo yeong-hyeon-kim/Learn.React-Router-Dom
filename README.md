@@ -29,9 +29,45 @@
 
 ### 라우터(Router Dom)는 리액트(React)를 여러 페이지로 나눠서 사용할 수 있게 만드는 것이 목적입니다.
 
-## 💻 개발 환경(Develop Environment)
+#### BrowserRouter
 
-s
+* 리액트 라우터를 사용하려는 태그의 상위 태그를 `<BrowserRouter/>` 감싸줍니다.
+
+```javascript
+import { BrowserRouter } from "react-router-dom";
+
+<BrowserRouter>
+    <App />
+</BrowserRouter>
+```
+
+#### Route
+
+* 특정 주소에 컴포넌트 연결하는 태그 입니다.
+* Route는 단독으로 사용할 수 없고 Routes안에 포함하여 사용합니다.
+
+```javascript
+import { Route, Routes } from "react-router-dom";
+
+<Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/Profile/" element={<Profile />} />
+    <Route path="/profiles/" element={<Profiles />} />
+    <Route path="/history" element={<HistorySample />} />
+</Routes>
+```
+
+#### Link
+
+* 다른 주소로 이동시키는 태그입니다.
+* ✔ `<Link/>`
+  * 브라우저의 주소만 변경
+* ❌ `<a/>`
+  * 페이지를 아예 새로 불러옵니다.
+  * 리액트 앱이 지니고있는 상태들도 초기화되고, 렌더링된 컴포넌트도 모두 사라지고 새로 렌더링을 하게됩니다.
+
+## 💻 개발 환경(Develop Environment)
 
 ||운영체제(OS)|언어(Language)|프레임워크(Framework)|
 |-|:-:|:-:|:-:|
